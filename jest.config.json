@@ -1,0 +1,25 @@
+{
+    "transform": {
+        "^.+\\.ts?$": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "/tests/.*\\.(test|spec)?\\.(ts|tsx)$",
+    "moduleDirectories": [
+        "node_modules",
+        "src"
+    ],
+    "roots": [
+        "src"
+    ],
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "node"
+    ],
+    "moduleNameMapper": {
+        "src/(.*)": "<rootDir>/src/$1"
+    }
+}
