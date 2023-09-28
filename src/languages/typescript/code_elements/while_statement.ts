@@ -1,18 +1,18 @@
-import { BaseWhileStatement, BaseStatement } from "src/base";
+import { BaseWhileStatement, BaseStatement, BaseStatementAST } from "src/base";
 
 export class TSWhileStatement extends BaseWhileStatement {
-    condition: string;
-    children: BaseStatement[];
+	condition: string;
+	children: BaseStatement[];
 
-    constructor(condition: string, children: Object[]) {
-        super(condition, children);
-    }
+	constructor(condition: string, children: BaseStatementAST[]) {
+		super(condition, children);
+	}
 
-    createCodeBlock(): string {
-        const childrenCodeBlock = this.children
-            .map((child) => child.createCodeBlock())
-            .join("\n");
+	createCodeBlock(): string {
+		const childrenCodeBlock = this.children
+			.map((child) => child.createCodeBlock())
+			.join("\n");
 
-        return `while (${this.condition}) {\n${childrenCodeBlock}\n}`;
-    }
+		return `while (${this.condition}) {\n${childrenCodeBlock}\n}`;
+	}
 }

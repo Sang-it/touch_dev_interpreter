@@ -1,15 +1,16 @@
-import { BaseStatement } from "../types";
+import { BaseStatement, BaseStatementAST } from "../types";
+import { statementParser } from "src/languages/typescript";
 
 export class BaseIfStatement {
-    condition: string;
-    children: BaseStatement[];
+	condition: string;
+	children: BaseStatement[];
 
-    constructor(condition: string, children: Object[]) {
-        this.condition = condition;
-        this.children = children as BaseStatement[];
-    }
+	constructor(condition: string, children: BaseStatementAST[]) {
+		this.condition = condition;
+		this.children = statementParser(children);
+	}
 
-    createCodeBlock(): string {
-        throw "Must override createCodeBlock method!"
-    }
+	createCodeBlock(): string {
+		throw "Must override createCodeBlock method!";
+	}
 }

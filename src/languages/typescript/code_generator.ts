@@ -1,10 +1,15 @@
-import { BaseStatementAST } from "src/base"
-import { statementParser } from "./parser"
+import { prettierFormat } from "src/utils";
+import { BaseStatementAST } from "src/base";
+import { statementParser } from "./parser";
 
-export const codeGenerator = (ast: BaseStatementAST[]): string => {
-    const statementInstances = statementParser(ast);
+export const codeGenerator = async (
+	ast: BaseStatementAST[]
+): Promise<string> => {
+	const statementInstances = statementParser(ast);
 
-    return statementInstances.reduce((acc, statementInstance) => {
-        return acc + statementInstance.createCodeBlock() + "\n";
-    }, "")
-}
+	return prettierFormat(
+		statementInstances.reduce((acc, statementInstance) => {
+			return acc + statementInstance.createCodeBlock() + "\n";
+		}, "")
+	);
+};
