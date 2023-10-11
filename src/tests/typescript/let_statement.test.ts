@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import { LetStatementAST } from "src/base";
-import { statementParser } from "src/languages/typescript";
+import { LetStatementAST } from "../../base";
+import { statementParser } from "../../languages/typescript";
 
 describe("TYPESCRIPT: Let Statement", () => {
 	test(`Check that statementParser can parse a let statement when a variable of type number is given.`, () => {

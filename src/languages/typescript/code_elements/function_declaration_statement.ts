@@ -4,7 +4,8 @@ import {
     BasePrimitive,
     BaseStatement,
     BaseStatementAST,
-} from "src/base";
+} from "../../../base";
+import { statementParser } from "../parser";
 import { TSPrimitiveMap } from "../types";
 
 export class TSFunctionDeclarationStatement extends BaseFunctionDeclarationStatement {
@@ -21,7 +22,7 @@ export class TSFunctionDeclarationStatement extends BaseFunctionDeclarationState
         returnType?: BasePrimitive,
         returnStatement?: string
     ) {
-        super(name, args, children, returnType, returnStatement);
+        super(statementParser, name, args, children, returnType, returnStatement);
     }
 
     createCodeBlock(): string {

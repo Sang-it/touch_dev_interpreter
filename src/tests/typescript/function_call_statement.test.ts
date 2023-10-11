@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import { FunctionCallStatementAST } from "src/base";
-import { statementParser } from "src/languages/typescript";
+import { FunctionCallStatementAST } from "../../base";
+import { statementParser } from "../../languages/typescript";
 
 describe("TYPESCRIPT : Function Call Statement", () => {
 	test(`Creates valid function call code with all args being of type number.`, () => {

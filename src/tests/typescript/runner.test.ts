@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import { BaseStatementAST } from "src/base";
-import { runnerTypescript } from "src/languages/typescript";
+import { BaseStatementAST } from "../../base";
+import { runnerTypescript } from "../../languages/typescript";
 
 describe("TYPESCRIPT: Runner", () => {
     test(`Check that the runner is working correctly`, async () => {

@@ -1,4 +1,4 @@
-import { BaseStatementAST } from "src/base";
+import { BaseStatementAST } from "../../base";
 import { statementParser } from "./parser";
 
 export const codeGenerator = (

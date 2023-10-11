@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import { statementParser } from "src/languages/typescript";
-import { FunctionDeclarationStatementAST } from "src/base";
+import { statementParser } from "../../languages/typescript";
+import { FunctionDeclarationStatementAST } from "../../base";
 
 describe("TYPESCRIPT : Function Declaration Statement", () => {
     test(`Check that statementParser can parse a function declaration statement with body.`, () => {

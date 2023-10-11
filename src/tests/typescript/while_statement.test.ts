@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import { statementParser } from "src/languages/typescript";
-import { WhileStatementAST } from "src/base";
+import { statementParser } from "../../languages/typescript";
+import { WhileStatementAST } from "../../base";
 
 describe("TYPESCRIPT: While Statement", () => {
     test(`Check that statementParser can parse a while statement with body.`, () => {

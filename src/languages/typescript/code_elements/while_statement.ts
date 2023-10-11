@@ -1,11 +1,12 @@
-import { BaseWhileStatement, BaseStatement, BaseStatementAST } from "src/base";
+import { BaseWhileStatement, BaseStatement, BaseStatementAST } from "../../../base";
+import { statementParser } from "../parser";
 
 export class TSWhileStatement extends BaseWhileStatement {
     condition: string;
     children: BaseStatement[];
 
     constructor(condition: string, children: BaseStatementAST[]) {
-        super(condition, children);
+        super(condition, children, statementParser);
     }
 
     createCodeBlock(): string {

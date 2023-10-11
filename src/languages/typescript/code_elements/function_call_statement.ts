@@ -1,4 +1,4 @@
-import { BaseFunctionCallStatement } from "src/base";
+import { BaseFunctionCallStatement } from "../../../base";
 
 export class TSFunctionCallStatement extends BaseFunctionCallStatement {
 	name: string;

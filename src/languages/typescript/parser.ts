@@ -1,4 +1,4 @@
-import { BaseStatement, BaseStatementAST } from "src/base";
+import { BaseStatement, BaseStatementAST } from "../../base";
 import {
     TSFunctionCallStatement,
     TSFunctionDeclarationStatement, TSIfStatement,

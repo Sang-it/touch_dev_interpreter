@@ -1,4 +1,4 @@
-import { BasePrimitive } from "src/base";
+import { BasePrimitive } from "../../../base";
 
 const PYPrimitiveMap = new Map<BasePrimitive, String>();
 

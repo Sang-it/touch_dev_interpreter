@@ -1,4 +1,4 @@
-import { BaseLetStatement, BasePrimitive } from "src/base";
+import { BaseLetStatement, BasePrimitive } from "../../../base";
 import { PYPrimitiveMap } from "../types";
 
 export class PYLetStatement extends BaseLetStatement {

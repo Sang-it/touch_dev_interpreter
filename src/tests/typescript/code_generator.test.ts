@@ -1,6 +1,6 @@
-import { BaseStatementAST } from "src/base";
+import { BaseStatementAST } from "../../base";
 import { describe, expect, test } from "@jest/globals";
-import { codeGenerator } from "src/languages/typescript";
+import { codeGenerator } from "../../languages/typescript";
 
 describe("TYPESCRIPT: Generator", () => {
     test(`Check that valid code is produced`, () => {

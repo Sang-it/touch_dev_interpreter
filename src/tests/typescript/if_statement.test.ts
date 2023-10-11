@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import { statementParser } from "src/languages/typescript";
-import { IfStatementAST } from "src/base";
+import { statementParser } from "../../languages/typescript";
+import { IfStatementAST } from "../../base";
 
 describe("TYPESCRIPT : If Statement", () => {
     test(`Check that statementParser can parse a if statement with body.`, () => {

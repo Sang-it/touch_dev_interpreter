@@ -1,4 +1,4 @@
-import { BaseLetStatement, BasePrimitive } from "src/base";
+import { BaseLetStatement, BasePrimitive } from "../../../base";
 import { TSPrimitiveMap } from "../types";
 
 export class TSLetStatement extends BaseLetStatement {
