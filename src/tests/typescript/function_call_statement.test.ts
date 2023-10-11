@@ -64,6 +64,7 @@ describe("TYPESCRIPT : Function Call Statement", () => {
 		const functionCallStatementInstance = statementParser([
 			functionCallStatementAST,
 		])[0];
+
 		const actualCode = functionCallStatementInstance.createCodeBlock();
 
 		const expectedCode = "console.log(x, y);";

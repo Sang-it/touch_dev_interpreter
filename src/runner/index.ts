@@ -3,11 +3,11 @@ import { promisify } from "util";
 
 const exec = promisify(execSync);
 
-export async function runner(command: string, code: string) {
-	try {
-		const { stdout } = await exec(`${command} '${code}'`);
-		console.log(stdout);
-	} catch ({ stderr }) {
-		console.error(stderr);
-	}
+export const runner = async (command: string, code: string): Promise<string> => {
+    try {
+        const { stdout } = await exec(`${command} "${code}"`);
+        return stdout;
+    } catch ({ stderr }) {
+        return stderr;
+    }
 }
