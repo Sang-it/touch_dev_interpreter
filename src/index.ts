@@ -14,7 +14,7 @@ import { codeGenerator, runnerTypescript } from "./languages/typescript";
 
     app.use(
         cors({
-            origin: ["http://localhost:3000"],
+            origin: ["http://localhost:3000", "null"],
         })
     );
 
@@ -31,7 +31,7 @@ import { codeGenerator, runnerTypescript } from "./languages/typescript";
     app.post("/typescript/code-generator", async (req: Request, res: Response) => {
         const { body } = req;
         const code = await prettierFormat(codeGenerator(body));
-        res.json(code);
+        res.json({ code: code });
     });
 
     app.listen(process.env.PORT, () =>

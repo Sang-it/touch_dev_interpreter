@@ -1,5 +1,5 @@
-import { BaseWhileStatement, BaseStatement, BaseStatementAST } from "../../../base";
 import { statementParser } from "../parser";
+import { BaseWhileStatement, BaseStatement, BaseStatementAST } from "../../../base";
 
 export class TSWhileStatement extends BaseWhileStatement {
     condition: string;
