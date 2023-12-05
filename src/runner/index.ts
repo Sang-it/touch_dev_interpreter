@@ -5,7 +5,7 @@ const exec = promisify(execSync);
 
 export const runner = async (command: string, code: string): Promise<string> => {
     try {
-        const { stdout } = await exec(`${command} "${code}"`);
+        const { stdout } = await exec(`${command} '${code}'`);
         return stdout;
     } catch ({ stderr }) {
         return stderr;
