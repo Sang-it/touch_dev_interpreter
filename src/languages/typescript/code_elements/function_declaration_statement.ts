@@ -27,20 +27,21 @@ export class TSFunctionDeclarationStatement extends BaseFunctionDeclarationState
 
     createCodeBlock(): string {
         const args =
-            this.args &&
-            this.args
-                .map((arg) => `${arg.name}: ${TSPrimitiveMap.get(arg.type)}`)
-                .join(", ");
+            this.args ?
+                this.args
+                    .map((arg) => `${arg.name}: ${TSPrimitiveMap.get(arg.type)}`)
+                    .join(", ")
+                : "";
 
         const returnBlock =
-            this.returnType && `: ${TSPrimitiveMap.get(this.returnType)}`;
+            this.returnType ? `: ${TSPrimitiveMap.get(this.returnType)}` : "";
 
         const childrenCodeBlock =
-            this.children &&
-            this.children.map((child) => child.createCodeBlock()).join(" ");
+            this.children ?
+                this.children.map((child) => child.createCodeBlock()).join(" ") : "";
 
         const returnStatement =
-            this.returnStatement && `return ${this.returnStatement};`;
+            this.returnStatement ? `return ${this.returnStatement};` : "";
 
         return `function ${this.name} (${args})${returnBlock} {${childrenCodeBlock}${returnStatement}}`;
     }

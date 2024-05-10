@@ -24,14 +24,22 @@ import { codeGenerator, runnerTypescript } from "./languages/typescript";
 
     app.post("/typescript/run", async (req: Request, res: Response) => {
         const { body } = req;
-        const result = await runnerTypescript(body);
-        res.json(result);
+        try {
+            const result = await runnerTypescript(body);
+            res.json(result);
+        } catch (error) {
+            res.json({ error: error.message });
+        }
     });
 
     app.post("/typescript/code-generator", async (req: Request, res: Response) => {
         const { body } = req;
-        const code = await prettierFormat(codeGenerator(body));
-        res.json({ code: code });
+        try {
+            const code = await prettierFormat(codeGenerator(body));
+            res.json({ code: code });
+        } catch (error) {
+            res.json({ error: error.message });
+        }
     });
 
     app.listen(process.env.PORT, () =>
